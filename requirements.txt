@@ -1,0 +1,41 @@
+# ----------------------------
+# 🔧 FastAPI and server
+# ----------------------------
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6  # For file uploads
+
+# ----------------------------
+# ✅ Pydantic (FastAPI depends on this)
+# ----------------------------
+pydantic>=2.0.0
+
+# ----------------------------
+# 🌐 HTTP + .env handling
+# ----------------------------
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# ----------------------------
+# 📄 Document Processing (PDF/DOCX/Emails)
+# ----------------------------
+pdfplumber>=0.10.0
+python-docx>=1.1.0
+email-reply-parser>=0.5.12  # ✅ Python 3.13 compatible for email fallback
+
+# Optional (commented out, not compatible with Python 3.13)
+# extract-msg>=0.47.0
+# eml-parser>=1.17.0
+
+# ----------------------------
+# 🤖 Embeddings & Search
+# ----------------------------
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.0
+numpy>=1.24.0,<2.0.0  # ⚠ Safe for Py 3.13
+tqdm>=4.65.0
+
+# ----------------------------
+# 🛠 Utilities
+# ----------------------------
+setuptools>=65.0.0  # Needed for building wheels (especially Py 3.13)
