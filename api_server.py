@@ -11,9 +11,25 @@ import tempfile
 import requests
 from pathlib import Path
 import logging
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(
+    title="Document Processing API",
+    description="API for processing documents and answering questions using embeddings + LLM",
+    version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Frontend dev server
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers including Authorization
+)
+
 
 # Import functions from your hackv2.py
-from main import (
+from hackv2 import (
     extract_meaningful_chunks,
     extract_docx_chunks,
     extract_email_chunks,
@@ -28,12 +44,6 @@ from main import (
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Initialize FastAPI app
-app = FastAPI(
-    title="Document Processing API",
-    description="API for processing documents and answering questions using embeddings + LLM",
-    version="1.0.0"
-)
 
 # Authentication
 security = HTTPBearer()
