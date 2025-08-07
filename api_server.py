@@ -12,6 +12,8 @@ import requests
 from pathlib import Path
 import logging
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI(
     title="Document Processing API",
