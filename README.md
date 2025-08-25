@@ -26,7 +26,7 @@ This system intelligently processes queries like *"46-year-old male, knee surger
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/llm-document-processor.git
+   git clone https://github.com/JASHoswal1234/LLM-Document-Processing-System.git
    cd llm-document-processor
    ```
 
